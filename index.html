@@ -19,7 +19,7 @@
   <script type="text/javascript">
     $(function () {
       window.swaggerUi = new SwaggerUi({
-      url: "api-docs.json",
+      url: "apiPlay/api-docs.json",
       dom_id: "swagger-ui-container",
       supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
       onComplete: function(swaggerApi, swaggerUi){
@@ -54,7 +54,7 @@
 <body>
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://osv.io">OSv API</a>
+    <a href="http://osv.io">OSv API</a> using <a href="https://developers.helloreverb.com/swagger/">Swagger</a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
       <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
