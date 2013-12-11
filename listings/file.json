@@ -1,0 +1,86 @@
+{
+    "apiVersion": "0.0.1",
+    "swaggerVersion": "1.2",
+    "basePath": "https://github.com/cloudius-systems/mgmt/api",
+    "resourcePath": "/file",
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "apis": [
+        {
+            "path": "/file/get{fullPath}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get File/Directory infomration",
+                    "notes": "return File or Directory related infomration",
+                    "responseClass": "File",
+                    "nickname": "getFile",
+                    "produces": [
+                        "application/json",
+                        "application/xml"
+                    ],
+                    "parameters": [          
+                        {
+                            "name": "fullPath",
+                            "description": "Full path of file to delete",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "string"
+                        }
+                    ]
+                }
+            ],
+            "responseMessages":[
+                {
+                    "code": 200,
+                    "message": "Ok",
+                    "responseModel": "File"
+                },
+                {
+                    "code": 404,
+                    "message": "File not found"
+                },
+                {
+                    "code": 400,
+                    "message": "Not a valid path"
+                }
+
+            ]
+        }
+    ],
+    "models" : {
+        "File": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "fullPath": {
+                    "type": "array",
+                    "items": "string" 
+                },
+                "lastUpdateDate": {
+                    "type": "dateType"
+                },
+                "userid": { "type": "string"},
+                "groupid": {"type": "string" },
+                "size": { "type": "long"},
+                "creationdate": {"type": "datetype"},
+                "lastmodified": {"type":  "datetype"},
+                "lastaccessed": {"type": "datetype"},
+                "readable": {"type": "boolean"},
+                "writeable": {"type": "boolean"},
+                "executable": {"type": "boolean"},
+                "compressionmethod": {"type": "string"},
+                "encryptionmethod": {"type": "string"},
+                "inusecount": {"type": "long"},
+                "isDir": {"type": "boolean"},
+                "files": {
+                    "type": "List(String)",
+                    "description": "list files and directories in a directory"
+                }
+            }
+        }
+    }
+}
