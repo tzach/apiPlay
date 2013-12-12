@@ -21,6 +21,10 @@
         {
             "path": "/../listings/thread.json",
             "description": "Operations on threads"
+        },
+        {
+            "path": "/../listings/test.json",
+            "description": "Operations on tests"
         }
     ]
 }

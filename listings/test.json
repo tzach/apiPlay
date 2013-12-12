@@ -1,0 +1,81 @@
+{
+    "apiVersion": "0.0.1",
+    "swaggerVersion": "1.2",
+    "basePath": "https://github.com/cloudius-systems/mgmt/api",
+    "resourcePath": "/test",
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "apis": [
+        {
+            "path": "/test/invoke{name}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Run OSv test",
+                    "notes": "return test result",
+                    "responseClass": "Result",
+                    "nickname": "runTest",
+                    "produces": [
+                        "application/json",
+                        "application/xml"
+                    ],
+                    "parameters": [          
+                        {
+                            "id": "name",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "long"
+                        }
+                    ]
+                }
+            ],
+            "responseMessages":[
+                {
+                    "code": 200,
+                    "message": "Ok",
+                    "responseModel": "Test"
+                },
+                {
+                    "code": 404,
+                    "message": "Test not found"
+                }
+            ]
+        },
+        {
+            "path": "/test/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "return list of all avilable tests",
+                    "responseClass": "List(string)",
+                    "nickname": "listTests",
+                    "produces": [
+                        "application/json",
+                        "application/xml"
+                    ]
+                }
+            ]
+        }
+    ],
+    "models" : {
+        "Result": {
+            "id": "Result",
+            "properties": {
+                "success": {
+                    "type": "boolean",
+                    "description": "test result: true is success, false is fail"
+                },
+                "time": {
+                    "type": "long",
+                    "description": "test execution time"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "test traces"
+                }
+            }
+        }
+    }
+}
