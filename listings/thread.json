@@ -1,0 +1,76 @@
+{
+    "apiVersion": "0.0.1",
+    "swaggerVersion": "1.2",
+    "basePath": "https://github.com/cloudius-systems/mgmt/api",
+    "resourcePath": "/thread",
+    "produces": [
+        "application/json",
+        "application/xml"
+    ],
+    "apis": [
+        {
+            "path": "/thread/get{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Get thread infomration",
+                    "notes": "return thread related infomration",
+                    "responseClass": "Thread",
+                    "nickname": "getThread",
+                    "produces": [
+                        "application/json",
+                        "application/xml"
+                    ],
+                    "parameters": [          
+                        {
+                            "id": "thread id",
+                            "required": true,
+                            "allowMultiple": false,
+                            "dataType": "long"
+                        }
+                    ]
+                }
+            ],
+            "responseMessages":[
+                {
+                    "code": 200,
+                    "message": "Ok",
+                    "responseModel": "Thread"
+                },
+                {
+                    "code": 404,
+                    "message": "Thread not found"
+                }
+            ]
+        }
+    ],
+    "models" : {
+        "Thread": {
+            "id": "Thread",
+            "properties": {
+                "id": {
+                    "type": "long",
+                    "description": "unique identifier"
+                },
+                "priority": { "type": "float" },
+                "sched-policy": { "type": "long" },
+                "stack-size": { "type": "long" },
+                "status": {
+                    "type": "string",
+                    "description": "thread status",
+                    "enum": [
+                        "invalid",
+                        "prestarted",
+                        "unstarted",
+                        "waiting",
+                        "running",
+                        "queued",
+                        "waking", 
+                        "terminating",
+                        "terminated"
+                    ]
+                }
+            }
+        }
+    }
+}

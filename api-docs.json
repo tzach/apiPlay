@@ -17,15 +17,9 @@
         {  
             "path": "/../listings/file.json",
             "description": "File System API"
-        }
-    ],
-    "todo": [
-        {
-            "path": "http://localhost:8000/listings/thread",
-            "description": "Operations on threads"
         },
         {
-            "path": "http://localhost:8000/listings/ ",
+            "path": "/../listings/thread.json",
             "description": "Operations on threads"
         }
     ]
