@@ -1,7 +1,7 @@
 {
     "apiVersion": "0.0.1",
     "swaggerVersion": "1.2",
-    "basePath": "https://github.com/cloudius-systems/mgmt/api",
+    "basePath": "{$Host}",
     "resourcePath": "/test",
     "produces": [
         "application/json",
@@ -39,8 +39,7 @@
                 },
                 {
                     "code": 202,
-                    "message": "Accepted",
-                    "responseModel": "Test"
+                    "message": "Accepted"
                 },
                 {
                     "code": 404,
@@ -54,11 +53,7 @@
                 {
                     "method": "GET",
                     "summary": "return list of all avilable tests",
-                    "responseClass": {
-                        "type": "array",
-                        "tests":{"type":"string"},
-                        "description": "list of tests"
-                    },
+                    "responseClass": "Tests",
                     "nickname": "listTests",
                     "produces": [
                         "application/json",
@@ -84,6 +79,15 @@
                     "type": "string",
                     "description": "test traces"
                 }
+            }
+        },
+        "Tests": {
+            "properties": {
+                 "files": {
+                     "type": "array",
+                     "items":{"type":"string"},
+                     "description": "list of tests" 
+                 }
             }
         }
     }
