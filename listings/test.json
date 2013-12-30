@@ -12,7 +12,7 @@
             "path": "/test/invoke{name}",
             "operations": [
                 {
-                    "method": "GET",
+                    "method": "POST",
                     "summary": "Run OSv test",
                     "notes": "return test result",
                     "responseClass": "Result",
@@ -26,7 +26,7 @@
                             "id": "name",
                             "required": true,
                             "allowMultiple": false,
-                            "dataType": "long"
+                            "dataType": "string"
                         }
                     ]
                 }
@@ -34,7 +34,12 @@
             "responseMessages":[
                 {
                     "code": 200,
-                    "message": "Ok",
+                    "message": "OK",
+                    "responseModel": "Test"
+                },
+                {
+                    "code": 202,
+                    "message": "Accepted",
                     "responseModel": "Test"
                 },
                 {
@@ -44,12 +49,16 @@
             ]
         },
         {
-            "path": "/test/list",
+            "path": "/tests",
             "operations": [
                 {
                     "method": "GET",
                     "summary": "return list of all avilable tests",
-                    "responseClass": "List(string)",
+                    "responseClass": {
+                        "type": "array",
+                        "tests":{"type":"string"},
+                        "description": "list of tests"
+                    },
                     "nickname": "listTests",
                     "produces": [
                         "application/json",
