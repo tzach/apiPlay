@@ -1,7 +1,7 @@
 ---
 name: "𝄞 installation Issue"
 about: Use this template for instllation related issues
-labels: install'
+labels: install
 ---
 
 Please make sure that this is a installation issue.

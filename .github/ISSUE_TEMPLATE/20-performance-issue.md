@@ -1,7 +1,7 @@
 ---
 name: "🏃 Performance Issue"
 about: Use this template for reporting a performance issue
-labels: 'type:performance'
+labels: performance
 
 ---
 
