@@ -1,7 +1,7 @@
 ---
 name: "☕ Build Issue"
 about: Use this template for build issues
-labels: 'build'
+labels: build
 ---
 
 Please make sure that this is a build issue.
