@@ -1,16 +1,14 @@
 ---
-name: "☕ Build/Installation Issue"
-about: Use this template for build/installation issues
-labels: 'type:build/install'
-
+name: "☕ Build Issue"
+about: Use this template for build issues
+labels: 'build'
 ---
 
-<em>Please make sure that this is a build/installation issue.
+Please make sure that this is a build issue.
 
 **System information**
 - OS Platform and Distribution (e.g., Linux Ubuntu 16.04):
 - GCC/Compiler version (if compiling from source):
-
 
 **Describe the problem**
 
